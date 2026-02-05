@@ -891,6 +891,11 @@ function setupRealtimeListeners() {
     loadConfig().then(() => {
       loadDailyTasks();
       loadMonitoring();
+      // Update task editor if settings modal is open
+      if (!document.getElementById('settingsModal').classList.contains('hide')) {
+        renderMemberEditors();
+        renderTaskEditor();
+      }
     });
   });
 }
@@ -957,7 +962,7 @@ window.removeMember = async function(shift, member) {
   alert(`✅ ${member} removed successfully!`);
 };
 
-function renderTaskEditor() {
+window.renderTaskEditor = function() {
   const shift = document.getElementById('taskShiftSelect').value;
   const tasks = DATA.tasks[shift] || [];
   const container = document.getElementById('tasks-current');
