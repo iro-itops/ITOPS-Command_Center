@@ -864,16 +864,34 @@ function setupRealtimeListeners() {
     `).join('');
   });
   
-  // Listen to daily tasks changes
-  const currentShift = document.getElementById('shiftSelect').value;
-  onValue(ref(db, `daily/${TODAY}/${currentShift}`), () => {
-    loadDailyTasks();
+  // Listen to daily tasks changes for ALL shifts
+  ['s1', 's2', 's3'].forEach(shift => {
+    onValue(ref(db, `daily/${TODAY}/${shift}`), () => {
+      const currentShift = document.getElementById('shiftSelect').value;
+      if (shift === currentShift) {
+        loadDailyTasks();
+      }
+    });
   });
   
-  // Listen to monitoring changes
-  const monShift = document.getElementById('monitorShift').value;
-  onValue(ref(db, `monitoring/${TODAY}/${monShift}`), () => {
-    loadMonitoring();
+  // Listen to monitoring changes for ALL shifts
+  ['s1', 's2', 's3'].forEach(shift => {
+    onValue(ref(db, `monitoring/${TODAY}/${shift}`), () => {
+      loadMonitoring();
+    });
+  });
+  
+  // Listen to text fields changes
+  onValue(ref(db, `texts/${TODAY}`), () => {
+    loadTexts();
+  });
+  
+  // Listen to config changes (tasks and members)
+  onValue(ref(db, `config`), () => {
+    loadConfig().then(() => {
+      loadDailyTasks();
+      loadMonitoring();
+    });
   });
 }
 
@@ -1293,5 +1311,4 @@ window.resetData = async function() {
 
 </body>
 </html>
-
 
