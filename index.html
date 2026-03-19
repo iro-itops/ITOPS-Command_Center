@@ -1068,13 +1068,27 @@
   <!-- Report History -->
   <div id="tab7" class="card tab-content">
     <h2>📜 Report History</h2>
-    <p style="color: #666; margin-bottom: 20px;">Track all generated reports with trigrams and timestamps - automatic activity log!</p>
+    <p style="color: #666; margin-bottom: 20px;">
+      Track all generated reports with trigrams and timestamps - automatic activity log!<br>
+      <strong>💡 Tip:</strong> Change the date below to view reports from previous days (e.g., March 18, March 15, etc.)
+    </p>
+    
+    <div style="margin-bottom: 20px; padding: 20px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 12px; border-left: 5px solid #2196f3;">
+      <h3 style="color: #1976d2; margin-bottom: 12px; font-size: 1.1rem;">📅 How to View Past Reports:</h3>
+      <ul style="color: #555; line-height: 1.8; margin-left: 20px;">
+        <li>Today is: <strong>${new Date().toLocaleDateString()}</strong></li>
+        <li>To view March 18 reports: Change date to <strong>2026-03-18</strong></li>
+        <li>To view March 15 reports: Change date to <strong>2026-03-15</strong></li>
+        <li>Click <strong>"🔍 Load History"</strong> button after changing date</li>
+      </ul>
+    </div>
     
     <div style="margin-bottom: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
       <label style="font-weight: 600;">Filter by Date:</label>
       <input type="date" id="historyDate" onchange="loadReportHistory()" style="max-width: 200px;">
       <button class="btn btn-primary" onclick="loadReportHistory()">🔍 Load History</button>
       <button class="btn btn-secondary" onclick="exportHistoryToExcel()">📊 Export to Excel</button>
+      <button class="btn btn-secondary" onclick="setHistoryDateToday()" style="background: #28a745;">📅 Today</button>
     </div>
     
     <div id="historyList"></div>
@@ -2080,6 +2094,11 @@ window.exportHistoryToExcel = async function() {
     console.error('Error exporting:', err);
     alert('❌ Failed to export history');
   }
+};
+
+window.setHistoryDateToday = function() {
+  document.getElementById('historyDate').value = TODAY;
+  loadReportHistory();
 };
 
 window.resetData = async function() {
