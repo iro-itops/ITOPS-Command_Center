@@ -476,6 +476,212 @@
       font-size: 0.85rem;
     }
     
+    /* Announcement Cards */
+    .announcement-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border-left: 5px solid #667eea;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .announcement-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+    }
+    
+    .announcement-card.shift-all {
+      border-left-color: #28a745;
+    }
+    
+    .announcement-card.shift-s1 {
+      border-left-color: #ff9800;
+    }
+    
+    .announcement-card.shift-s2 {
+      border-left-color: #ffc107;
+    }
+    
+    .announcement-card.shift-s3 {
+      border-left-color: #9c27b0;
+    }
+    
+    .announcement-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .announcement-meta {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      color: #666;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .announcement-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge-all {
+      background: #28a745;
+      color: white;
+    }
+    
+    .badge-s1 {
+      background: #ff9800;
+      color: white;
+    }
+    
+    .badge-s2 {
+      background: #ffc107;
+      color: #333;
+    }
+    
+    .badge-s3 {
+      background: #9c27b0;
+      color: white;
+    }
+    
+    .announcement-message {
+      color: #333;
+      line-height: 1.6;
+      font-size: 1rem;
+      white-space: pre-wrap;
+    }
+    
+    .announcement-delete {
+      padding: 6px 12px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .announcement-delete:hover {
+      background: #c82333;
+      transform: scale(1.05);
+    }
+    
+    .no-announcements {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+      font-size: 1.1rem;
+    }
+    
+    /* Report History Cards */
+    .history-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border-left: 5px solid #667eea;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .history-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+    }
+    
+    .history-card.shift-s1 { border-left-color: #ff9800; }
+    .history-card.shift-s2 { border-left-color: #ffc107; }
+    .history-card.shift-s3 { border-left-color: #9c27b0; }
+    
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .history-meta {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      color: #666;
+      font-size: 0.9rem;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+    
+    .history-trigram {
+      background: #667eea;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .history-actions {
+      display: flex;
+      gap: 8px;
+    }
+    
+    .history-btn {
+      padding: 8px 16px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .history-btn:hover {
+      background: #5568d3;
+      transform: scale(1.05);
+    }
+    
+    .history-preview {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      color: #666;
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .history-preview::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(transparent, #f8f9fa);
+    }
+    
+    .no-history {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+      font-size: 1.1rem;
+    }
+    
     .btn-group {
       display: flex;
       gap: 12px;
@@ -501,6 +707,123 @@
     .hide { display: none !important; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
+    
+    /* Floating Announcement Banner */
+    .announcement-banner {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: 400px;
+      z-index: 9999;
+      animation: slideInRight 0.5s ease-out;
+    }
+    
+    @keyframes slideInRight {
+      from {
+        transform: translateX(450px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideOutRight {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(450px);
+        opacity: 0;
+      }
+    }
+    
+    .announcement-banner-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+      position: relative;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+      }
+      50% {
+        box-shadow: 0 15px 50px rgba(102, 126, 234, 0.6);
+      }
+    }
+    
+    .announcement-banner-item.urgent {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      animation: pulseUrgent 1s ease-in-out infinite;
+    }
+    
+    @keyframes pulseUrgent {
+      0%, 100% {
+        box-shadow: 0 10px 40px rgba(220, 53, 69, 0.4);
+      }
+      50% {
+        box-shadow: 0 15px 50px rgba(220, 53, 69, 0.7);
+      }
+    }
+    
+    .announcement-banner-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .announcement-banner-close {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+    
+    .announcement-banner-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+    
+    .announcement-banner-message {
+      font-size: 1rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+    
+    .announcement-banner-meta {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .banner-badge {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.5px;
+    }
     
     /* Responsive */
     @media (max-width: 768px) {
@@ -595,6 +918,9 @@
   </div>
 </div>
 
+<!-- Floating Announcement Banner -->
+<div id="floatingAnnouncements" class="announcement-banner"></div>
+
 <!-- Main App -->
 <div id="app" class="hide container">
   
@@ -638,7 +964,9 @@
     <button class="tab" onclick="switchTab(2)">📊 Monthly</button>
     <button class="tab" onclick="switchTab(3)">🔧 Patching</button>
     <button class="tab" onclick="switchTab(4)">👁️ Monitoring</button>
-    <button class="tab" onclick="switchTab(5)">📤 Output</button>
+    <button class="tab" onclick="switchTab(5)">📢 Announcements</button>
+    <button class="tab" onclick="switchTab(6)">📤 Output</button>
+    <button class="tab" onclick="switchTab(7)">📜 Report History</button>
   </div>
   
   <!-- Daily Tasks -->
@@ -701,8 +1029,31 @@
     <div id="slotList"></div>
   </div>
   
-  <!-- Output -->
+  <!-- Announcements -->
   <div id="tab5" class="card tab-content">
+    <h2>📢 Announcements & Reminders</h2>
+    
+    <div style="margin-bottom: 25px;">
+      <select id="announcementShift" onchange="loadAnnouncements()" style="max-width: 350px;">
+        <option value="all">📣 All Shifts</option>
+        <option value="s1">🌅 1st Shift Only</option>
+        <option value="s2">☀️ 2nd Shift Only</option>
+        <option value="s3">🌙 3rd Shift Only</option>
+      </select>
+    </div>
+    
+    <div style="margin-bottom: 30px; padding: 25px; background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); border-radius: 15px; border-left: 5px solid #667eea;">
+      <h3 style="color: #667eea; margin-bottom: 15px;">✍️ Post New Announcement</h3>
+      <textarea id="newAnnouncement" placeholder="Type your announcement or reminder here..." style="min-height: 100px; margin-bottom: 15px;"></textarea>
+      <button class="btn btn-primary" onclick="postAnnouncement()">📤 Post Announcement</button>
+    </div>
+    
+    <h3 style="margin: 30px 0 15px; color: #667eea;">📋 Recent Announcements</h3>
+    <div id="announcementList"></div>
+  </div>
+  
+  <!-- Output -->
+  <div id="tab6" class="card tab-content">
     <h2>📤 Output Report</h2>
     
     <div class="btn-group">
@@ -712,6 +1063,21 @@
     </div>
     
     <div class="output" id="outputBox">Click "Generate Report" to create your operations report...</div>
+  </div>
+  
+  <!-- Report History -->
+  <div id="tab7" class="card tab-content">
+    <h2>📜 Report History</h2>
+    <p style="color: #666; margin-bottom: 20px;">Track all generated reports with trigrams and timestamps - automatic activity log!</p>
+    
+    <div style="margin-bottom: 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+      <label style="font-weight: 600;">Filter by Date:</label>
+      <input type="date" id="historyDate" onchange="loadReportHistory()" style="max-width: 200px;">
+      <button class="btn btn-primary" onclick="loadReportHistory()">🔍 Load History</button>
+      <button class="btn btn-secondary" onclick="exportHistoryToExcel()">📊 Export to Excel</button>
+    </div>
+    
+    <div id="historyList"></div>
   </div>
   
 </div>
@@ -821,6 +1187,9 @@ window.login = async function() {
   loadDailyTasks();
   loadMonitoring();
   loadTexts();
+  
+  // Initialize history date to today
+  document.getElementById('historyDate').value = TODAY;
 };
 
 // Enter key support
@@ -898,6 +1267,21 @@ function setupRealtimeListeners() {
       }
     });
   });
+  
+  // Listen to announcements changes
+  onValue(ref(db, `announcements/${TODAY}`), (snapshot) => {
+    const data = snapshot.exists() ? snapshot.val() : null;
+    
+    // Update floating banner on ALL pages
+    updateFloatingAnnouncements(data);
+    
+    // Update announcements tab if visible
+    const announcementTab = document.getElementById('tab5');
+    if (announcementTab && !announcementTab.classList.contains('tab-content')) {
+      return; // Tab not visible
+    }
+    loadAnnouncements();
+  });
 }
 
 // Settings
@@ -941,6 +1325,11 @@ window.addMember = async function(shift) {
     return;
   }
   
+  // Initialize array if it doesn't exist or is null
+  if (!DATA.members[shift]) {
+    DATA.members[shift] = [];
+  }
+  
   if (DATA.members[shift].includes(member)) {
     alert('Member already exists');
     return;
@@ -956,7 +1345,18 @@ window.addMember = async function(shift) {
 window.removeMember = async function(shift, member) {
   if (!confirm(`Remove ${member} from shift?`)) return;
   
+  // Ensure array exists before filtering
+  if (!DATA.members[shift]) {
+    DATA.members[shift] = [];
+  }
+  
   DATA.members[shift] = DATA.members[shift].filter(m => m !== member);
+  
+  // Ensure we always save an array, even if empty
+  if (!DATA.members[shift]) {
+    DATA.members[shift] = [];
+  }
+  
   await saveConfig();
   renderMemberEditors();
   alert(`✅ ${member} removed successfully!`);
@@ -987,6 +1387,11 @@ window.addTask = async function() {
     return;
   }
   
+  // Initialize array if it doesn't exist or is null
+  if (!DATA.tasks[shift]) {
+    DATA.tasks[shift] = [];
+  }
+  
   if (DATA.tasks[shift].includes(task)) {
     alert('Task already exists');
     return;
@@ -1008,7 +1413,18 @@ window.addTask = async function() {
 window.removeTask = async function(shift, task) {
   if (!confirm(`Remove task "${task}" from shift?`)) return;
   
+  // Ensure array exists before filtering
+  if (!DATA.tasks[shift]) {
+    DATA.tasks[shift] = [];
+  }
+  
   DATA.tasks[shift] = DATA.tasks[shift].filter(t => t !== task);
+  
+  // Ensure we always save an array, even if empty
+  if (!DATA.tasks[shift]) {
+    DATA.tasks[shift] = [];
+  }
+  
   await saveConfig();
   renderTaskEditor();
   alert(`✅ Task "${task}" removed successfully!`);
@@ -1205,6 +1621,201 @@ async function loadTexts() {
   if (patching.exists()) document.getElementById('patchingText').value = patching.val();
 }
 
+// Announcements
+window.loadAnnouncements = async function() {
+  const shift = document.getElementById('announcementShift').value;
+  const listEl = document.getElementById('announcementList');
+  
+  try {
+    const snap = await get(ref(db, `announcements/${TODAY}`));
+    
+    if (!snap.exists()) {
+      listEl.innerHTML = '<div class="no-announcements">📭 No announcements yet. Be the first to post!</div>';
+      return;
+    }
+    
+    const announcements = snap.val();
+    let items = Object.entries(announcements)
+      .map(([id, data]) => ({ id, ...data }))
+      .filter(a => shift === 'all' || a.shift === shift || a.shift === 'all')
+      .sort((a, b) => b.timestamp - a.timestamp);
+    
+    if (items.length === 0) {
+      listEl.innerHTML = '<div class="no-announcements">📭 No announcements for this shift.</div>';
+      return;
+    }
+    
+    const html = items.map(item => {
+      const time = new Date(item.timestamp).toLocaleString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      
+      const shiftLabel = item.shift === 'all' ? 'All Shifts' : 
+                         item.shift === 's1' ? '1st Shift' :
+                         item.shift === 's2' ? '2nd Shift' : '3rd Shift';
+      
+      const badgeClass = item.shift === 'all' ? 'badge-all' :
+                         item.shift === 's1' ? 'badge-s1' :
+                         item.shift === 's2' ? 'badge-s2' : 'badge-s3';
+      
+      return `
+        <div class="announcement-card shift-${item.shift}">
+          <div class="announcement-header">
+            <div class="announcement-meta">
+              <span class="announcement-badge ${badgeClass}">${shiftLabel}</span>
+              <span>👤 ${item.author}</span>
+              <span>🕐 ${time}</span>
+            </div>
+            <button class="announcement-delete" onclick="deleteAnnouncement('${item.id}')">🗑️ Delete</button>
+          </div>
+          <div class="announcement-message">${item.message}</div>
+        </div>
+      `;
+    }).join('');
+    
+    listEl.innerHTML = html;
+  } catch (err) {
+    console.error('Error loading announcements:', err);
+    listEl.innerHTML = '<div class="no-announcements">❌ Error loading announcements</div>';
+  }
+};
+
+window.postAnnouncement = async function() {
+  const messageEl = document.getElementById('newAnnouncement');
+  const message = messageEl.value.trim();
+  const shift = document.getElementById('announcementShift').value;
+  
+  if (!message) {
+    alert('⚠️ Please enter an announcement message');
+    return;
+  }
+  
+  if (message.length > 500) {
+    alert('⚠️ Message too long. Please keep it under 500 characters.');
+    return;
+  }
+  
+  const id = 'ann_' + Date.now();
+  const announcement = {
+    message: message,
+    author: DATA.user,
+    shift: shift,
+    timestamp: Date.now()
+  };
+  
+  try {
+    await set(ref(db, `announcements/${TODAY}/${id}`), announcement);
+    messageEl.value = '';
+    await loadAnnouncements();
+    alert('✅ Announcement posted successfully!');
+  } catch (err) {
+    console.error('Error posting announcement:', err);
+    alert('❌ Failed to post announcement. Please try again.');
+  }
+};
+
+window.deleteAnnouncement = async function(id) {
+  if (!confirm('Delete this announcement?')) return;
+  
+  try {
+    await remove(ref(db, `announcements/${TODAY}/${id}`));
+    await loadAnnouncements();
+    alert('✅ Announcement deleted');
+  } catch (err) {
+    console.error('Error deleting announcement:', err);
+    alert('❌ Failed to delete announcement');
+  }
+};
+
+// Floating Announcement Banner
+const dismissedAnnouncements = new Set();
+
+function updateFloatingAnnouncements(announcements) {
+  const bannerEl = document.getElementById('floatingAnnouncements');
+  if (!bannerEl) return;
+  
+  if (!announcements || Object.keys(announcements).length === 0) {
+    bannerEl.innerHTML = '';
+    return;
+  }
+  
+  // Get current shift to filter announcements
+  const currentShift = document.getElementById('shiftSelect')?.value || 's1';
+  
+  // Filter: show "all" + current shift only, not dismissed, posted in last 2 hours
+  const twoHoursAgo = Date.now() - (2 * 60 * 60 * 1000);
+  const items = Object.entries(announcements)
+    .map(([id, data]) => ({ id, ...data }))
+    .filter(a => {
+      // Not dismissed
+      if (dismissedAnnouncements.has(a.id)) return false;
+      
+      // Posted in last 2 hours
+      if (a.timestamp < twoHoursAgo) return false;
+      
+      // For current shift or all shifts
+      if (a.shift !== 'all' && a.shift !== currentShift) return false;
+      
+      return true;
+    })
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .slice(0, 3); // Show max 3 at a time
+  
+  if (items.length === 0) {
+    bannerEl.innerHTML = '';
+    return;
+  }
+  
+  const html = items.map(item => {
+    const time = new Date(item.timestamp).toLocaleString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    const shiftLabel = item.shift === 'all' ? '📣 ALL SHIFTS' : 
+                       item.shift === 's1' ? '🌅 1ST SHIFT' :
+                       item.shift === 's2' ? '☀️ 2ND SHIFT' : '🌙 3RD SHIFT';
+    
+    // Mark as urgent if posted in last 30 minutes
+    const thirtyMinsAgo = Date.now() - (30 * 60 * 1000);
+    const isUrgent = item.timestamp > thirtyMinsAgo;
+    
+    return `
+      <div class="announcement-banner-item ${isUrgent ? 'urgent' : ''}">
+        <div class="announcement-banner-header">
+          <span class="banner-badge">${shiftLabel}</span>
+          <button class="announcement-banner-close" onclick="dismissFloatingAnnouncement('${item.id}')">×</button>
+        </div>
+        <div class="announcement-banner-message">${item.message}</div>
+        <div class="announcement-banner-meta">
+          <span>👤 ${item.author}</span>
+          <span>🕐 ${time}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  bannerEl.innerHTML = html;
+}
+
+window.dismissFloatingAnnouncement = function(id) {
+  dismissedAnnouncements.add(id);
+  const bannerEl = document.getElementById('floatingAnnouncements');
+  const itemEl = bannerEl.querySelector(`[onclick*="${id}"]`)?.closest('.announcement-banner-item');
+  if (itemEl) {
+    itemEl.style.animation = 'slideOutRight 0.3s ease-out';
+    setTimeout(() => {
+      itemEl.remove();
+      if (bannerEl.children.length === 0) {
+        bannerEl.innerHTML = '';
+      }
+    }, 300);
+  }
+};
+
 // Generate Report
 window.generateReport = async function() {
   const shift = document.getElementById('shiftSelect').value;
@@ -1273,7 +1884,26 @@ window.generateReport = async function() {
   report += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
   
   document.getElementById('outputBox').textContent = report;
-  alert('✅ Report generated successfully!');
+  
+  // Save to history
+  const reportId = 'rpt_' + Date.now();
+  const historyEntry = {
+    id: reportId,
+    trigram: DATA.user,
+    shift: shift,
+    shiftName: shiftName,
+    date: TODAY,
+    timestamp: Date.now(),
+    content: report
+  };
+  
+  try {
+    await set(ref(db, `reportHistory/${TODAY}/${reportId}`), historyEntry);
+    alert('✅ Report generated and saved to history!');
+  } catch (err) {
+    console.error('Error saving to history:', err);
+    alert('✅ Report generated! (History save failed)');
+  }
 };
 
 window.copyReport = function() {
@@ -1299,6 +1929,157 @@ window.downloadReport = function() {
   a.download = `ITOPS_Report_${TODAY}.txt`;
   a.click();
   alert('✅ Report downloaded!');
+};
+
+// Report History
+window.loadReportHistory = async function() {
+  const dateInput = document.getElementById('historyDate');
+  const targetDate = dateInput.value || TODAY;
+  const listEl = document.getElementById('historyList');
+  
+  try {
+    listEl.innerHTML = '<div style="text-align: center; padding: 40px; color: #999;">Loading history...</div>';
+    
+    const snap = await get(ref(db, `reportHistory/${targetDate}`));
+    
+    if (!snap.exists()) {
+      listEl.innerHTML = `<div class="no-history">📭 No reports generated on ${targetDate}</div>`;
+      return;
+    }
+    
+    const reports = snap.val();
+    const items = Object.entries(reports)
+      .map(([id, data]) => ({ id, ...data }))
+      .sort((a, b) => b.timestamp - a.timestamp);
+    
+    const html = items.map(item => {
+      const time = new Date(item.timestamp).toLocaleString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      
+      const preview = item.content.substring(0, 300) + '...';
+      
+      return `
+        <div class="history-card shift-${item.shift}">
+          <div class="history-header">
+            <div class="history-meta">
+              <span class="history-trigram">${item.trigram}</span>
+              <span>🔄 ${item.shiftName} Shift</span>
+              <span>🕐 ${time}</span>
+            </div>
+            <div class="history-actions">
+              <button class="history-btn" onclick="viewHistoryReport('${item.id}', '${targetDate}')">👁️ View</button>
+              <button class="history-btn" onclick="downloadHistoryReport('${item.id}', '${targetDate}')">💾 Download</button>
+              <button class="history-btn" style="background: #dc3545;" onclick="deleteHistoryReport('${item.id}', '${targetDate}')">🗑️ Delete</button>
+            </div>
+          </div>
+          <div class="history-preview">${preview}</div>
+        </div>
+      `;
+    }).join('');
+    
+    listEl.innerHTML = html;
+  } catch (err) {
+    console.error('Error loading history:', err);
+    listEl.innerHTML = '<div class="no-history">❌ Error loading report history</div>';
+  }
+};
+
+window.viewHistoryReport = async function(id, date) {
+  try {
+    const snap = await get(ref(db, `reportHistory/${date}/${id}`));
+    if (!snap.exists()) {
+      alert('❌ Report not found');
+      return;
+    }
+    
+    const report = snap.val();
+    document.getElementById('outputBox').textContent = report.content;
+    switchTab(6); // Switch to Output tab
+    alert('✅ Report loaded in Output tab');
+  } catch (err) {
+    console.error('Error viewing report:', err);
+    alert('❌ Failed to load report');
+  }
+};
+
+window.downloadHistoryReport = async function(id, date) {
+  try {
+    const snap = await get(ref(db, `reportHistory/${date}/${id}`));
+    if (!snap.exists()) {
+      alert('❌ Report not found');
+      return;
+    }
+    
+    const report = snap.val();
+    const blob = new Blob([report.content], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `ITOPS_${report.trigram}_${report.shiftName}Shift_${date}.txt`;
+    a.click();
+    alert('✅ Report downloaded!');
+  } catch (err) {
+    console.error('Error downloading report:', err);
+    alert('❌ Failed to download report');
+  }
+};
+
+window.deleteHistoryReport = async function(id, date) {
+  if (!confirm('Delete this report from history?')) return;
+  
+  try {
+    await remove(ref(db, `reportHistory/${date}/${id}`));
+    await loadReportHistory();
+    alert('✅ Report deleted from history');
+  } catch (err) {
+    console.error('Error deleting report:', err);
+    alert('❌ Failed to delete report');
+  }
+};
+
+window.exportHistoryToExcel = async function() {
+  const dateInput = document.getElementById('historyDate');
+  const targetDate = dateInput.value || TODAY;
+  
+  try {
+    const snap = await get(ref(db, `reportHistory/${targetDate}`));
+    
+    if (!snap.exists()) {
+      alert('❌ No reports found for this date');
+      return;
+    }
+    
+    const reports = snap.val();
+    const items = Object.entries(reports)
+      .map(([id, data]) => ({ id, ...data }))
+      .sort((a, b) => b.timestamp - a.timestamp);
+    
+    // Create CSV content
+    let csv = 'Date,Time,Trigram,Shift,Report Summary\n';
+    
+    items.forEach(item => {
+      const dateTime = new Date(item.timestamp);
+      const date = dateTime.toLocaleDateString();
+      const time = dateTime.toLocaleTimeString();
+      const summary = item.content.substring(0, 200).replace(/\n/g, ' ').replace(/,/g, ';');
+      
+      csv += `"${date}","${time}","${item.trigram}","${item.shiftName} Shift","${summary}..."\n`;
+    });
+    
+    // Download CSV
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `ITOPS_History_${targetDate}.csv`;
+    a.click();
+    alert('✅ History exported to Excel (CSV)!');
+  } catch (err) {
+    console.error('Error exporting:', err);
+    alert('❌ Failed to export history');
+  }
 };
 
 window.resetData = async function() {
